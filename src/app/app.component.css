@@ -1,0 +1,485 @@
+.content2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  
+.selectedWeapon{
+    background: radial-gradient(transparent, #F7DC6F);
+    border-radius: 50%;
+  }
+
+a{
+  cursor: pointer;  
+}
+
+/* csspokemon */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body { font-size: 100%; } /* Controls Size */
+
+.pokemon {
+    position: absolute;
+    top: 7em;
+    left: 77%;
+    width: 20em;
+    height: 20em;
+  margin: -10em;
+}
+
+
+.squirtle::after {
+  content: '';
+  position: absolute;
+  z-index: -10;
+  bottom: 0;
+  left: 50%;
+  width: 60%;
+  height: 20%;
+  margin-left: -30%;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+    top: 59%;
+    left: 45%;
+    width: 6em;
+    height: 8em;
+    margin: 4em 0 0 -1em;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    background-color: #7cd;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border: 0.375em solid #555;
+    border-radius: 52%;
+}
+
+.body2 {
+ position: absolute;
+    top: 59%;
+    left: 60%;
+    width: 5em;
+    height: 8em;
+    margin: 4em 0 0 -1em;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    background-color: #7cd;
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+    border: 0.375em solid #555;
+    border-radius: 52%;
+}
+
+.body3 {
+    position: absolute;
+    top: 78.4%;
+    left: 53.2%;
+    width: 1em;
+    height: 2em;
+    margin: 4em 0 0 -1em;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    /* background-color: #7cd; */
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border: 0.525em solid #555;
+    border-radius: 52%;
+}
+
+.tail {
+    content: '';
+    top: 14.25em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 2em;
+    width: 7.3em;
+    height: 1.5em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(28deg);
+    background-color: #329bb0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.325em #555;
+    z-index: -1;
+}
+
+.tail2 {
+content: '';
+    top: 12.8em;
+    position: absolute;
+    /* bottom: -0.0625em; */
+    left: 3em;
+    width: 5.3em;
+    height: 1em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(28deg);
+    background-color: #329bb0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.325em #555;
+    z-index: -1;
+}
+
+.head {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 10em;
+  height: 10em;
+  margin: -8.25em 0 0 -5.5em;
+  background-color: #329bb0;
+  border: 0.325em solid #555;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+}
+
+.head::before {
+content: '';
+    position: absolute;
+    bottom: -0.0625em;
+    top: 2.7em;
+    left: 2em;
+    width: 6em;
+    height: 6.75em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(-43deg);
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 0.325em #555;
+}
+
+.head::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  box-shadow: inset -0.5em 0.25em #2b899c;
+}
+
+.nose{
+ content: '';
+    position: absolute;
+    z-index: 1;
+    top: 4em;
+    left: 7em;
+    width: 1.5em;
+    height: 1.5em;
+    -webkit-transform: rotate(55deg);
+    transform: rotate(25deg);
+/*     background-color: blue; */
+    border: 0.25em solid #555;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-radius: 10%;
+}
+
+.nose2{
+       content: '';
+    position: absolute;
+    z-index: 1;
+    top: 3.6em;
+    left: 8.83em;
+    width: 1em;
+    height: 1.5em;
+    overflow: hidden;
+    -webkit-transform: rotate(55deg);
+    transform: rotate(47deg);
+    /* background-color: blue; */
+    border: 0.25em solid #555;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-radius: 10%;
+}
+
+.eye {
+  position: absolute;
+  z-index: 1;
+  top: 5em;
+  left: 4em;
+  width: 2em;
+  height: 2.825em;
+  overflow: hidden;
+  background-color: #555;
+  border: 0.1875em solid #555;
+  border-radius: 50% / 60% 60% 40% 40%;
+  box-shadow: inset 0 -0.375em #329bb0;
+}
+
+.eye::before {
+  content: '';
+  position: absolute;
+  top: 0.375em;
+/*   right: 0.25em; */
+  width: 30%;
+  height: 30%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.eye:first-child {
+  top: 4.8em;
+/*   left: 0.5em; */
+  width: 1.5em;
+  height: 2.25em;
+  border: 0.125em solid #555;
+  z-index:3;
+}
+
+.mouth {
+content: '';
+    top: 4.25em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 2em;
+    width: 8.25em;
+    height: 4em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.325em #555;
+}
+
+.mouth::before {
+    content: '';
+    position: absolute;
+    top: 1.75em;
+    right: -0.1em;
+    width: 2em;
+    height: 1em;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(-15deg);
+    /* background-color: #7cd; */
+    border: 0.125em solid transparent;
+    border-bottom-color: #555;
+    border-radius: 50%;
+}
+
+.neck{
+content: '';
+    top: 10.9em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 5.8em;
+    width: 4.7em;
+    height: 3.5em;
+  -webkit-transform: rotate(10deg);
+    transform: rotate(28deg);
+    background-color: #329bb0;
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 0.325em #555; */
+    border: 0.275em solid #555;
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+}
+
+.neck2{
+   content: '';
+    top: 11em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 9.5em;
+    width: 4.3em;
+    height: 2.8em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(28deg);
+    background-color: #329bb0;
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 0.325em #555; */
+    border: 0.275em solid #555;
+    /* border-top-color: transparent !important; */
+    border-left-color: transparent !important;
+}
+
+.back{
+      content: '';
+    top: 12em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 1.5em;
+    width: 8em;
+    height: 2.56em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(109deg);
+    background-color: #329bb0;
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 0.325em #555; */
+    border: 0.275em solid #555;
+    /* border-top-color: transparent !important; */
+    border-left-color: transparent !important;
+    z-index: -1;
+}
+
+.arm{
+   content: '';
+    top: 14.5em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 5.5em;
+    width: 4em;
+    height: 2.7em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(82deg);
+    /* background-color: #7cd; */
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 0.325em #555; */
+    border: 0.275em solid #555;
+    /* border-top-color: transparent !important; */
+    border-left-color: transparent !important;
+    z-index: 0;
+}
+
+.arm2{
+     content: '';
+    top: 14em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 10.7em;
+    width: 4.5em;
+    height: 2.7em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(64deg);
+    background-color: #7cd;
+    border-radius: 50%;
+    /* box-shadow: 0 0 0 0.325em #555; */
+    border: 0.275em solid #555;
+    /* border-top-color: transparent !important; */
+    border-left-color: transparent !important;
+    z-index: -1;
+}
+
+.extra{
+     content: '';
+    position: absolute;
+    /* bottom: -0.0625em; */
+    top: 1.7em;
+    left: 0.1em;
+    width: 1.5em;
+    height: 1.85em;
+    border: 3px solid #555;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(-4deg);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.extra2{
+content: '';
+    position: absolute;
+    /* bottom: -0.0625em; */
+    top: 1.4em;
+    left: 3.45em;
+    width: 1.5em;
+    height: 1.85em;
+    border: 3px solid #555;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(0deg);
+    background-color: white;
+    border-radius: 50%;
+}
+.feet{
+content: '';
+    top: 19.25em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 6em;
+    width: 4.3em;
+    height: 1.7em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(28deg);
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.325em #555;
+    z-index: -1;
+}
+
+.feet::before{
+content: '';
+    position: absolute;
+    top: 0.55em;
+    right: -0.1em;
+    width: 1.3em;
+    height: 1em;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(-4deg);
+    /* background-color: #7cd; */
+    border: 0.125em solid transparent;
+    border-top-color: #555;
+    border-radius: 31%;
+}
+
+.feet::after{
+    content: '';
+    position: absolute;
+    top: 1em;
+    right: -0.1em;
+    width: 1.3em;
+    height: 1em;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(-4deg);
+    /* background-color: #7cd; */
+    border: 0.125em solid transparent;
+    border-top-color: #555;
+    border-radius: 30%;
+}
+
+.feet2{
+    content: '';
+    top: 18.7em;
+    position: absolute;
+    bottom: -0.0625em;
+    left: 10em;
+    width: 4.3em;
+    height: 1.7em;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(20deg);
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.325em #555;
+    z-index: -1;
+}
+
+.feet2::before{
+content: '';
+    position: absolute;
+    top: 0.55em;
+    right: -0.1em;
+    width: 1.3em;
+    height: 1em;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(-4deg);
+    /* background-color: #7cd; */
+    border: 0.125em solid transparent;
+    border-top-color: #555;
+    border-radius: 31%;
+}
+
+.feet2::after{
+    content: '';
+    position: absolute;
+    top: 1em;
+    right: -0.1em;
+    width: 1.3em;
+    height: 1em;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(-4deg);
+    /* background-color: #7cd; */
+    border: 0.125em solid transparent;
+    border-top-color: #555;
+    border-radius: 30%;
+}
+
+
+
+/* end css pokemon */

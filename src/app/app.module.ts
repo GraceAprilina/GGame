@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { Ng2BootstrapModule } from 'ng2-bootstrap'
+
 import { AppComponent } from './app.component';
+import { ModalPlayComponent } from './modal-play/modal-play.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalPlayComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    Ng2BootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

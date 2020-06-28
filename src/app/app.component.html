@@ -1,20 +1,139 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
+<nav>
+  <div class="nav-wrapper" style="background: #A9CCE3 !important;">
+    <a class="brand-logo" style="margin-left: 10px;"> Rock-Paper-Scissors Games</a>
+  </div>
+</nav>
 
+<div class="container">
+  <div class="row">
+    <div class="col s6 m6 l6">
+      <div class="card small" style="height: 230px;">
+        <div class="card-content">
+          <span class="card-title">Player 1</span>
+          <p>Choose your weapon:</p>
+          <div  class="row">
+            <div class="col s4 m4 l4">
+              <a (click)="pick(0, 'p1')" ><img src="/assets/rock.png"  [ngClass]="{'selectedWeapon':playerSelected === 0}" style="width: 7em;"></a>
+            </div>
+            <div class="col s4 m4 l4">
+              <a  (click)="pick(1, 'p1')"><img src="/assets/paper.png" [ngClass]="{'selectedWeapon':playerSelected === 1}" style="width: 7em;"></a>
+            </div>
+            <div class="col s4 m4 l4">
+              <a (click)="pick(2, 'p1')" ><img src="/assets/scissors.png" [ngClass]="{'selectedWeapon':playerSelected === 2}" style="width: 7em;"></a>
+            </div>                       
+          </div>
+        </div>
+        <div class="card-action">
+          <!-- <span class="new badge" data-badge-caption="Player 1 Score: "> -->
+            Score: {{ scores[0] }}
+             <!-- </span> -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s6 m6 l6">
+      <div class="card small" style="height: 230px;">
+        <div class="card-content ">
+          <span class="card-title">Player 2</span>   
+          <p>Choose your weapon:</p>       
+          <div  class="row">
+              <div class="col s4 m4 l4">
+                <a (click)="pick(0, 'p2')" ><img src="/assets/rock.png"  [ngClass]="{'selectedWeapon':enemySelected === 0}" style="width: 7em;"></a>
+              </div>
+              <div class="col s4 m4 l4">
+                <a  (click)="pick(1, 'p2')"><img src="/assets/paper.png" [ngClass]="{'selectedWeapon':enemySelected === 1}" style="width: 7em;"></a>
+              </div>
+              <div class="col s4 m4 l4">
+                <a (click)="pick(2, 'p2')" ><img src="/assets/scissors.png" [ngClass]="{'selectedWeapon':enemySelected === 2}" style="width: 7em;"></a>
+              </div>                       
+            </div>
+        </div>
+        <div class="card-action">
+          <!-- <span class="new badge" data-badge-caption="Player 1 Score: ">  -->
+            Score: {{ scores[1] }} 
+          <!-- </span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div *ngIf="!loading && isResultShow">
+    <div [ngSwitch]="theResult">
+      <div class="row" [hidden]="done">
+        <div class="col s6 m6 l6">
+          <ng-template [ngSwitchCase]= "0"> 
+            <h1> Player 1 win! </h1>
+          </ng-template>
+          <ng-template [ngSwitchCase]= "1"> 
+            <h3> Player 1 lose.</h3>
+          </ng-template>
+          <ng-template [ngSwitchCase]= "2"> <h1>It's a tie! </h1> </ng-template>
+        </div>
+        <div class="col s6 m6 l6">
+          <ng-template [ngSwitchCase]= "0"> 
+            <h3> Player 2 lose.</h3>
+          </ng-template>
+          <ng-template [ngSwitchCase]= "1"> 
+            <h1> Player 2 win! </h1> 
+          </ng-template>
+          <ng-template [ngSwitchCase]= "2"> <h1>It's a tie! </h1> </ng-template>
+        </div>
+      </div>
+        <ng-template ngSwitchDefault> </ng-template>
+        <!-- <div class="row">
+          <div class="col m12 l12">
+            <p (click)="nextRound()" style="text-align: center;">Cick here to next round</p>
+          </div>
+        </div> -->
+    </div> 
+    <div *ngIf="done" >
+      <a (click)="reset()">
+      <div class="row" >
+        <div class="col s6 m6 l6">
+          <div class="pokemon">
+            <div class="tail"></div>
+            <div class="tail2"></div>
+          
+            <div class="body"></div>
+            <div class="body2">
+              <div class="extra"></div>
+                <div class="extra2"></div>       
+            </div>
+            <div class="body3"></div>
+            <div class="head">
+                <div class="eye"></div>
+                <div class="nose"></div>
+                <div class="nose2"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="neck"></div>
+            <div class="neck2"></div>
+  
+            <div class="back"></div>
+  
+            <div class="arm"></div>
+            <div class="arm2"></div>
+          
+            <div class="feet"></div>
+            <div class="feet2"></div>
+          </div>
+        </div>        
+        <div class="col s6 m6 l6">
+          <ng-container *ngIf="finalResult === 1"> <h1>Congrats! Player 1 is the winner</h1></ng-container>
+          <ng-container *ngIf="finalResult === 2"> <h1>Congrats! Player 2 is the winner</h1></ng-container>
+          <h3>Click me to play again</h3>
+        </div>
+      </div>
+      </a>
+      <!-- <button (click)="reset()"> Reset score</button> -->
+    </div>
+</div>
+
+<div *ngIf="loading">
+  <div class="row">
+    <div class="col m12 l12">
+      <p style="text-align: center;">Waiting another player...</p>
+    </div>
+  </div>
+</div>
